@@ -5,15 +5,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document
+@Document("credit")
 public class Credit {
     @Id
     private String id;
+    private String idClient;
     private String nameProduct;
     private String cardNumber;
     private String typeCredit;
     private String accountNumber;
     private Double balance;
-    private int creditLimit;
+    private Double credit;
+    private Double debt;
 
 }
