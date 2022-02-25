@@ -15,8 +15,6 @@ public interface ICreditService {
 
     Mono<Credit> save(Credit credit);
 
-    Mono<Credit> update(Credit credit);
-    
     Mono<Credit> getCreditByIdClient(String idClient);
 
     void delete(String id);
