@@ -1,6 +1,7 @@
 package com.bank.credit.controller;
 
 import com.bank.credit.entity.Credit;
+import com.bank.credit.model.Client;
 import com.bank.credit.service.ICreditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,11 @@ public class CreditController {
     @Autowired
     ICreditService service;
 
+    @GetMapping("/test/{id}")
+    public Mono<Client> test(@PathVariable("id") String id){
+        return service.test(id);
+    }
+    
     @GetMapping
     public Flux<Credit> getCredits(){
         return service.getAll();
@@ -22,6 +28,11 @@ public class CreditController {
     @GetMapping("/{id}")
     public Mono<Credit> getCreditById(@PathVariable("id") String id){
         return service.getCreditById(id);
+    }
+    
+    @GetMapping("/byPersonalClient/{id}")
+    public Mono<Credit> getCreditByIdClient(@PathVariable("id") String idClient){
+        return service.getCreditByIdClient(idClient);
     }
 
     @PostMapping

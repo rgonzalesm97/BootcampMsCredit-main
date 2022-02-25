@@ -10,7 +10,6 @@ public class Credit {
     @Id
     private String id;
     private String idClient;
-    private String nameProduct;
     private String cardNumber;
     private String typeCredit;
     private String accountNumber;

@@ -1,10 +1,15 @@
 package com.bank.credit.util;
 
-public class BusinessCredit implements CreditTypeOperation{
+import com.bank.credit.entity.Credit;
+
+import reactor.core.publisher.Mono;
+
+public class BusinessCredit implements Product{
 
 	@Override
-	public String test() {
-		return "business credit";
+	public Mono<Credit> create(Credit credit) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
+
 }
