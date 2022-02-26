@@ -28,6 +28,12 @@ public class CreditController {
     public Mono<Credit> getCreditByIdClient(@PathVariable("id") String idClient){
         return service.getCreditByIdClient(idClient);
     }
+    
+    @GetMapping("/allByClient/{id}")
+    public Flux<Credit> getAllCreditByIdClient(@PathVariable("id") String idClient){
+        return service.getAllByIdClient(idClient);
+    }
+
 
     @PostMapping
     public Mono<Credit> postCredit(@RequestBody Credit credit){

@@ -22,6 +22,11 @@ public class CreditServiceImpl implements ICreditService {
     public Flux<Credit> getAll() {
         return repository.findAll();
     }
+    
+    @Override
+    public Flux<Credit> getAllByIdClient(String idClient) {
+        return repository.findAllByIdClient(idClient);
+    }
 
     @Override
     public Mono<Credit> getCreditById(String id) {

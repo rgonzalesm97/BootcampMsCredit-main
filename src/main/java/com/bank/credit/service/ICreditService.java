@@ -10,6 +10,8 @@ import reactor.core.publisher.Mono;
 public interface ICreditService {
 
     Flux<Credit> getAll();
+    
+    Flux<Credit> getAllByIdClient(String idClient);
 
     Mono<Credit> getCreditById(String id);
 
